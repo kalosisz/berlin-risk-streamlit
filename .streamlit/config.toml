@@ -1,2 +1,4 @@
 [server]
+address = "0.0.0.0"
 enableCORS = false
+port = 8080
