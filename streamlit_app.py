@@ -6,7 +6,7 @@ import pydeck as pdk
 from conts import berlin_pop
 from functions import get_berlin, get_infection_data
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title='Berlin risk assessment', layout="wide")
 
 # hide_streamlit_style = """
 #             <style>
@@ -21,7 +21,6 @@ st.set_page_config(layout="wide")
 
 infection_data, date = get_infection_data()
 
-st.beta_set_page_config(page_title='Berlin risk assessment')
 st.title("Event risk assessment : probability of having an infected person")
 st.markdown(f"""
     Based on 7-day infection data 
