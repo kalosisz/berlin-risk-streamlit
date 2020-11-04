@@ -8,16 +8,16 @@ from functions import get_berlin, get_infection_data
 
 st.set_page_config(layout="wide")
 
-hide_streamlit_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            </style>
-            """
-st.markdown(
-    hide_streamlit_style,
-    unsafe_allow_html=True,
-)
+# hide_streamlit_style = """
+#             <style>
+#             #MainMenu {visibility: hidden;}
+#             footer {visibility: hidden;}
+#             </style>
+#             """
+# st.markdown(
+#     hide_streamlit_style,
+#     unsafe_allow_html=True,
+# )
 
 infection_data, date = get_infection_data()
 
