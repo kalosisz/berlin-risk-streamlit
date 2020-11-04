@@ -54,6 +54,10 @@ st.sidebar.markdown(
         Assuming completely random mixing at event, the probility of having an infected person is then
         $1-(1-p)^n$, where $p$ denotes the prevalence and $n$ the event size.
 
+        #### Data source
+        [COVID-19 in Berlin, Verteilung in den Bezirken - Gesamtübersicht](https://daten.berlin.de/datensaetze/covid-19-berlin-verteilung-den-bezirken-gesamt%C3%BCbersicht)
+        [Einwohnerinnen und Einwohner in den Ortsteilen Berlins am 31.12.2019](https://daten.berlin.de/datensaetze/einwohnerinnen-und-einwohner-den-ortsteilen-berlins-am-31122019)
+
         #### Acknowledgements
         This tool has taken inspirations from [COVID-19 Event Risk Assessment Planning Tool](https://covid19risk.biosci.gatech.edu/).
     """, )
