@@ -123,3 +123,44 @@ c2.pydeck_chart(
             )
         ],
     ))
+
+st.markdown("""
+    ## Current regulations as of 02.11.2020 - excerpt
+    ### Assemblies and religious events
+    **Public assemblies** may take place outdoors and in enclosed spaces **without 
+    limitation of the number of participants**, provided that the applicable 
+    hygiene and social distancing rules are obeyed. 
+    **Singing together** in enclosed spaces is only permitted if 
+    the hygiene and infection protection standards laid down in 
+    the framework hygiene plan of the responsible Senate 
+    Department of Culture and Europe are observed. In addition, 
+    participants must maintain a distance of at least 1.5 meters from persons from other households. 
+    The person in charge of the assembly must make sure that the assembly does not have 
+    more people in attendance than what is permitted according to the usable area of the place of assembly. 
+    Furthermore, organizers must draw up a hygiene plan that ensures compliance with the social distancing and hygiene rules.
+
+    **Worship services** and **sectarian/religious events** held outdoors and in 
+    enclosed spaces are **permitted with an unlimited number of people**. 
+    It is required that the minimum distances between all participants are 
+    maintained and the general hygiene guidelines are observed.
+
+    ### Public and private events
+    Events that belong to the culture, entertainment or leisure sector – such as concerts, operas, 
+    theater performances and dance events – are generally not permitted until the end of November 30.
+
+    **Public events in enclosed spaces** may only be held with **no more than 50 persons** until the end of November 30, 2020.
+
+    **Outdoor public events** may take place with a **maximum of 100 persons**.
+
+    Private meetings are permitted with a maximum of 10 persons. 
+    The following restrictions apply in addition: only persons from a maximum of two households 
+    or members of one household with a maximum of two additional persons from other households may meet.
+
+    For funerals and related events, the permitted number increases to 20 persons in enclosed spaces and 50 persons outside.
+
+    It remains a requirement for permission for all of these events that the organizers 
+    ensure compliance with the current social distancing and hygiene rules.
+
+    ### Source 
+    [The Governing Mayor of Berlin – Senate Chancellery](https://www.berlin.de/corona/en/measures/)
+""")
