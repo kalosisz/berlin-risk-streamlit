@@ -7,9 +7,9 @@ import geopandas as gpd
 from conts import berlin_pop
 
 
-@st.cache(show_spinner=False)
+@st.cache(show_spinner=False, ttl=3600)
 def get_infection_data():
-    url = "https://www.berlin.de/lageso/gesundheit/infektionsepidemiologie-infektionsschutz/corona/tabelle-bezirke-gesamtuebersicht/index.php/index/index.json?q="
+    url = "https://www.berlin.de/lageso/gesundheit/infektionsepidemiologie-infektionsschutz/corona/tabelle-bezirke-gesamtuebersicht/index.php/index/index.json"
     with urllib.request.urlopen(url) as response:
         df = pd.DataFrame(json.loads(response.read())["index"][-7:])
 
