@@ -3,10 +3,13 @@ import plotly.express as px
 import numpy as np
 import pydeck as pdk
 
-from conts import berlin_pop
+from streamlit import caching
+
 from functions import get_berlin, get_infection_data
 
-st.set_page_config(page_title='Berlin risk assessment', layout="wide")
+st.set_page_config(page_title='Berlin risk assessment',
+                   page_icon='favicon.ico',
+                   layout="wide")
 
 # hide_streamlit_style = """
 #             <style>
