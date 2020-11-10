@@ -130,7 +130,7 @@ c2.pydeck_chart(
     ))
 
 st.markdown("""
-    ## Current regulations as of 02.11.2020 - excerpt
+    ## Current regulations as of 07.11.2020 - excerpt
     ### Assemblies and religious events
     **Public assemblies** may take place outdoors and in enclosed spaces **without 
     limitation of the number of participants**, provided that the applicable 
