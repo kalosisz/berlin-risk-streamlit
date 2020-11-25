@@ -16,7 +16,14 @@ def get_infection_data():
     df.columns = df.columns.str.replace("_", "-").str.title().str.replace(
         "oe", "ö")
 
-    return df.iloc[:, 2:].sum() / berlin_pop, df["Datum"].agg(["min", "max"])
+    sum_by_bezirk = df.iloc[:, 2:].sum()
+
+    incidence_by_bezirk = sum_by_bezirk / berlin_pop
+    berlin_incidence = sum_by_bezirk.sum() / berlin_pop.sum()
+
+    min_max_date = df["Datum"].agg(["min", "max"])
+
+    return incidence_by_bezirk, berlin_incidence, min_max_date
 
 
 @st.cache(show_spinner=False, max_entries=1)

@@ -22,7 +22,7 @@ st.set_page_config(page_title='Berlin risk assessment',
 #     unsafe_allow_html=True,
 # )
 
-infection_data, date = get_infection_data()
+infection_data, berlin_wide, date = get_infection_data()
 
 st.title("""
     Berlin event risk assessment: probability of having an infected person
@@ -30,7 +30,8 @@ st.title("""
 st.markdown(f"""
     Based on 7-day infection data 
     between **{date.loc["min"]}** 
-    and **{date.loc["max"]}**
+    and **{date.loc["max"]}**.
+    The Berlin-wide incidence rate per 100,000 over that period is **{100_000 * berlin_wide:.2f}**.
 """)
 
 st.sidebar.title("Parameters")
