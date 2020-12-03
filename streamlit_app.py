@@ -131,7 +131,7 @@ c2.pydeck_chart(
     ))
 
 st.markdown("""
-    ## Current regulations as of 07.11.2020 - excerpt
+    ## Current regulations as of 30.11.2020 - excerpt
     ### Assemblies and religious events
     **Public assemblies** may take place outdoors and in enclosed spaces **without 
     limitation of the number of participants**, provided that the applicable 
@@ -154,13 +154,12 @@ st.markdown("""
     Events that belong to the culture, entertainment or leisure sector – such as concerts, operas, 
     theater performances and dance events – are generally not permitted until the end of November 30.
 
-    **Public events in enclosed spaces** may only be held with **no more than 50 persons** until the end of November 30, 2020.
+    **Public events in enclosed spaces** may only be held with **no more than 50 persons** until the end of December 22, 2020.
 
     **Outdoor public events** may take place with a **maximum of 100 persons**.
 
-    Private meetings are permitted with a maximum of 10 persons. 
-    The following restrictions apply in addition: only persons from a maximum of two households 
-    or members of one household with a maximum of two additional persons from other households may meet.
+    Private meetings are permitted with a maximum of five persons from a maximum of two households.
+    Children up to 12 years are not included in the maximum number of people allowed.
 
     For funerals and related events, the permitted number increases to 20 persons in enclosed spaces and 50 persons outside.
 
