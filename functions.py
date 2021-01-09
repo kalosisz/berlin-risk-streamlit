@@ -79,11 +79,11 @@ def get_pydeck_chart(last_day, nr_of_people):
             "text": "{Bezirk}",
         },
         map_style='mapbox://styles/mapbox/light-v9',
-        initial_view_state=pdk.ViewState(
-            latitude=52.52,
-            longitude=13.4,
-            zoom=9,
-        ),
+        initial_view_state=pdk.ViewState(latitude=52.52,
+                                         longitude=13.4,
+                                         zoom=9,
+                                         min_zoom=9,
+                                         max_zoom=10),
         layers=[
             pdk.Layer(
                 'GeoJsonLayer',
