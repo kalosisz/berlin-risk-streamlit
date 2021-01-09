@@ -1,11 +1,11 @@
 import streamlit as st
-import plotly.express as px
 import numpy as np
-import pydeck as pdk
 
 from streamlit import caching
 
-from functions import get_berlin, get_infection_data
+from functions import (get_infection_data, get_berlin_incidence,
+                       get_prevalence, get_last_day_prevalence,
+                       get_pydeck_chart, get_bar_chart, get_line_chart)
 
 st.set_page_config(page_title='Berlin risk assessment',
                    page_icon='favicon.ico',
@@ -22,16 +22,17 @@ st.set_page_config(page_title='Berlin risk assessment',
 #     unsafe_allow_html=True,
 # )
 
-infection_data, berlin_wide, date = get_infection_data()
+infection_data = get_infection_data()
+berlin_wide, start_date, end_date = get_berlin_incidence(infection_data)
 
 st.title("""
     Berlin event risk assessment: probability of having an infected person
 """)
 st.markdown(f"""
     Based on 7-day infection data 
-    between **{date.loc["min"]}** 
-    and **{date.loc["max"]}**.
-    The Berlin-wide incidence rate per 100,000 over that period is **{100_000 * berlin_wide:.2f}**.
+    between **{start_date}** 
+    and **{end_date}**.
+    The Berlin-wide incidence rate per 100,000 over that period is **{berlin_wide:.2f}**.
 """)
 
 st.sidebar.title("Parameters")
@@ -81,54 +82,16 @@ st.sidebar.markdown(
     unsafe_allow_html=True,
 )
 
-prevalence = undiscovered * infection_data
-prevalence = prevalence.rename("Estimated prevalence").to_frame()
-prevalence.index.names = ["Bezirk"]
-
-berlin = get_berlin()
-probability = (1 - (1 - prevalence).pow(nr_of_people)).reset_index()
-berlin = berlin.merge(probability, left_on="name", right_on="Bezirk")
-berlin["estimate"] = berlin["Estimated prevalence"]
-berlin["estimate_pct"] = (100 * berlin["estimate"]).round(2).astype(str) + "%"
+prevalence_ts = get_prevalence(infection_data, undiscovered)
+last_day_prevalance = get_last_day_prevalence(prevalence_ts)
 
 c1, c2 = st.beta_columns((2, 3))
 
-fig = px.bar(prevalence.reset_index(), x="Bezirk", y="Estimated prevalence")
-fig.update_yaxes(range=[0, 0.05])
-fig.update_yaxes(tickformat=".2%")
-fig.update_xaxes(tickangle=-45)
+c1.plotly_chart(get_bar_chart(last_day_prevalance), use_container_width=True)
 
-c1.plotly_chart(fig, use_container_width=True)
+c2.pydeck_chart(get_pydeck_chart(last_day_prevalance, nr_of_people))
 
-c2.pydeck_chart(
-    pdk.Deck(
-        tooltip={
-            "text": "{Bezirk}",
-        },
-        map_style='mapbox://styles/mapbox/light-v9',
-        initial_view_state=pdk.ViewState(
-            latitude=52.52,
-            longitude=13.4,
-            zoom=9,
-        ),
-        layers=[
-            pdk.Layer(
-                'GeoJsonLayer',
-                data=berlin,
-                getLineWidth=25,
-                get_fill_color='[204, 0, 0, 255 * estimate]',
-                pickable=True,
-            ),
-            pdk.Layer(
-                "TextLayer",
-                data=berlin,
-                sizeMinPixels=10,
-                sizeMaxPixels=20,
-                get_position=['lng', 'lat'],
-                get_text='estimate_pct',
-            )
-        ],
-    ))
+st.plotly_chart(get_line_chart(prevalence_ts), use_container_width=True)
 
 st.markdown("""
     ## Current regulations as of 18.12.2020 - excerpt
