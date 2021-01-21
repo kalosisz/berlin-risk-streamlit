@@ -16,7 +16,7 @@ def get_infection_data():
     df = pd.read_csv(csv_loc, sep=";")
     df = df.drop('id', axis=1)
     df['Date'] = pd.to_datetime(df['datum'])
-    df = df.set_index('Date')
+    df = df.groupby('Date').sum()
     df = df.rolling(7).sum().dropna()
 
     df.columns = df.columns.str.replace("_", "-").str.title().str.replace(
