@@ -103,7 +103,7 @@ c2.pydeck_chart(get_pydeck_chart(last_day_prevalance, nr_of_people))
 st.plotly_chart(get_line_chart(prevalence_ts), use_container_width=True)
 
 st.markdown("""
-    ## Current regulations as of 18.12.2020 - excerpt
+    ## Current regulations as of 24.06.2021 - excerpt
     ### Assemblies and religious events
     Public assemblies may take place outdoors and in enclosed spaces
     without limitation of the number of participants,
