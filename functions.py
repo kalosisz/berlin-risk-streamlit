@@ -12,7 +12,9 @@ from constants import berlin_pop
 @st.cache(show_spinner=False, max_entries=1, ttl=3600)
 @retry(wait_fixed=1000, stop_max_attempt_number=10)
 def get_infection_data():
-    csv_loc = "https://www.berlin.de/lageso/gesundheit/infektionskrankheiten/corona/tabelle-bezirke-gesamtuebersicht/index.php/index/all.csv"
+    csv_loc = (
+        "https://www.berlin.de/lageso/gesundheit/infektionskrankheiten/"
+        "corona/tabelle-bezirke-gesamtuebersicht/index.php/index/all.csv")
     df = pd.read_csv(csv_loc, sep=";")
     df = df.drop('id', axis=1)
     df['Date'] = pd.to_datetime(df['datum'])

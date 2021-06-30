@@ -1,7 +1,4 @@
 import streamlit as st
-import numpy as np
-
-from streamlit import caching
 
 from functions import (get_infection_data, get_berlin_incidence,
                        get_prevalence, get_last_day_prevalence,
@@ -75,7 +72,8 @@ st.sidebar.markdown(
 
         #### Acknowledgements :wave:
         This tool has taken inspirations from
-        [COVID-19 Event Risk Assessment Planning Tool](https://covid19risk.biosci.gatech.edu/).
+        [COVID-19 Event Risk Assessment Planning Tool]
+        (https://covid19risk.biosci.gatech.edu/).
     """, )
 
 st.sidebar.markdown(
@@ -84,7 +82,7 @@ st.sidebar.markdown(
         <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
         <img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" />
         </a>
-        <br />This work is licensed under a 
+        <br />This work is licensed under a
         <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
         Creative Commons Attribution-NonCommercial 4.0 International License</a>.
     """,
