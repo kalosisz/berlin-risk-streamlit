@@ -58,10 +58,10 @@ st.sidebar.markdown(
         The ascertainment bias (measuring the ratio of unreported cases)
          has not been estimated in Berlin yet.
         However, based on other estimates on seroprevalence,
-        it usaually lies between 5 and 10.
+        it usually lies between 5 and 10.
 
         Assuming completely random mixing at event,
-        the probility of having an infected person is then
+        the probability of having an infected person is then
         $1-(1-p)^n$, where $p$ denotes the prevalence and $n$ the event size.
 
         #### Data source :file_cabinet:
