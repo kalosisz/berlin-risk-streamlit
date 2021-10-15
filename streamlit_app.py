@@ -92,7 +92,7 @@ st.sidebar.markdown(
 prevalence_ts = get_prevalence(infection_data, undiscovered)
 last_day_prevalance = get_last_day_prevalence(prevalence_ts)
 
-c1, c2 = st.beta_columns((2, 3))
+c1, c2 = st.columns((2, 3))
 
 c1.plotly_chart(get_bar_chart(last_day_prevalance), use_container_width=True)
 
@@ -101,34 +101,29 @@ c2.pydeck_chart(get_pydeck_chart(last_day_prevalance, nr_of_people))
 st.plotly_chart(get_line_chart(prevalence_ts), use_container_width=True)
 
 st.markdown("""
-    ## Current regulations as of 24.06.2021 - excerpt
+    ## Current regulations as of 10.10.2021 - excerpt
     ### Assemblies and religious events
-    Public assemblies may take place outdoors and in enclosed spaces
-    without limitation of the number of participants,
-    provided that the applicable hygiene and social distancing rules
-    are obeyed. Singing together in enclosed spaces is only permitted
-    if the hygiene and infection protection standards laid down
-    in the framework hygiene plan of the responsible Senate Department
-    of Culture and Europe are observed. In addition, participants must
-    maintain a distance of at least 1.5 meters from persons
-    from other households and wear a medical mask
-    (an FFP2 mask must be worn in enclosed spaces).
-    In the case of assemblies in enclosed spaces with more than 20 people,
-    all participants must present a negative
-    Corona test or proof of vaccination or of recovery
-    from a Covid 19 infection. The person in charge of
-    the assembly must make sure that the assembly
-    does not have more people in attendance than
-    what is permitted according to the usable area of the place of assembly.
-    Furthermore, organizers must draw up a hygiene
-    plan that ensures compliance with the social distancing and hygiene rules.
+    Public assemblies may take place outdoors and in enclosed spaces without 
+    limitation of the number of participants, provided that the applicable 
+    hygiene and social distancing rules are obeyed. Singing together in enclosed 
+    spaces is only permitted if the hygiene and infection protection standards 
+    laid down in the framework hygiene plan of the responsible Senate Department 
+    of Culture and Europe are observed. In addition, participants must maintain 
+    a distance of at least 1.5 meters from persons from other households and wear 
+    a medical mask. In the case of assemblies in enclosed spaces, all participants 
+    must present a negative Corona test or proof of vaccination or of recovery from 
+    a Covid 19 infection. The person in charge of the assembly must make sure that 
+    the assembly does not have more people in attendance than what is permitted 
+    according to the usable area of the place of assembly. Furthermore, organizers 
+    must draw up a hygiene plan that ensures compliance with the social distancing 
+    and hygiene rules. When assemblies are conducted in enclosed spaces using the VR model, 
+    the minimum distance does not have to be maintained and the mask requirement does not apply.
 
-    Worship services and religious or similar events held outdoors
-    and in enclosed spaces are permitted with an unlimited number of people.
-    It is required that the minimum distances between all participants
-    are maintained and the general hygiene guidelines are observed.
-    All participants must wear an FFP2 mask if they are not in their seats.
-
+    Worship services and religious or similar events held outdoors and 
+    in enclosed spaces are permitted with an unlimited number of people. 
+    It is required that the minimum distances between all participants 
+    are maintained and the general hygiene guidelines are observed. 
+    All participants must wear a medical mask if they are not in their seats.
 
     ### Public and private events
     Events that belong to the culture, entertainment or leisure sector
@@ -136,24 +131,19 @@ st.markdown("""
     theater performances and dance events – are permitted
     subject to strict hygiene requirements.
 
-    Public events in enclosed spaces may be held with
-    up to 250 persons. The permissible number of persons is increased
-    to a maximum of 1000 if all the requirements of
-    the hygiene concept of the senate administration are met.
+    Public events in enclosed spaces may be held with up to 1,000 persons. 
+    The permissible number of persons is increased to a maximum of 2,000 if all 
+    the requirements of the hygiene concept of the senate administration are met. 
+    For indoor events, all participants must be able to show proof of 
+    a current negative Corona test, a complete vaccination (both doses) 
+    or a previous Covid 19 infection.
 
-    Outdoor public events may take place with a maximum of 1000 persons.
-    If more than 250 people are present,
-    testing is mandatory for all participants.
+    Outdoor public events may take place with a maximum of 2,000 persons. 
+    If more than 100 people are present, testing is mandatory for all participants.
 
-    Private meetings are only permitted with members of
-    your own household and with persons from
-    a maximum of four other households,
-    as long as no more than ten people are present at the same time.
-    Your own children up to 14 years of age as well as vaccinated
-    and recovered persons are not included.
-
-    For funerals and related events, the permitted number
-    increases to 20 persons in enclosed spaces and 50 persons outside.
+    Private meetings indoors are permitted without any limits on the 
+    amount of people attending. Outside gatherings are allowed for a maximum of 100 people. 
+    Your own children up to 14 years of age as well as vaccinated and recovered persons are not included.
 
     ### Source
     [The Governing Mayor of Berlin – Senate Chancellery](https://www.berlin.de/corona/en/measures/)
